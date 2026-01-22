@@ -1,0 +1,19 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+<h1>Panel Matematicas</h1>
+<ul>
+    <li>
+        @Html.ActionLink("Matematicas Get", "MatematicasGet", "Matematicas", new { num1 = 3, num2 = 2 })
+    </li>
+    <li>
+        <a asp-controller="Matematicas" asp-action="MatematicasPost">Sumar Numeros Post</a>
+    </li>
+    <li>
+        <a asp-controller="Matematicas" asp-action="MatematicasCollatz">Collatz</a>
+    </li>
+</ul>

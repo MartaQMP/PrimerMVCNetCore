@@ -14,6 +14,11 @@ namespace PrimerMVCNetCore.Controllers
             return View();
         }
 
+        public IActionResult Test()
+        {
+            return View();
+        }
+
         
     }
 }

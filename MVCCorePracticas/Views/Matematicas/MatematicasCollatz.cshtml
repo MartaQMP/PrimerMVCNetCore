@@ -1,0 +1,14 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<h1>Congetura de collatz</h1>
+<form method="post">
+    <label class="form-label">Introduce un numero:</label>
+    <input class="form-control" type="text" name="numero"/>
+    <br />
+    <button class="btn btn-dark">Hacer Collatz</button>
+</form>
+
+<p>@ViewBag.Collatz</p>
