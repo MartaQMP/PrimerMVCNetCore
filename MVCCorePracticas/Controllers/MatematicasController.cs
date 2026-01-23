@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MVCCorePracticas.Models;
 
 namespace MVCCorePracticas.Controllers
 {
@@ -42,27 +43,43 @@ namespace MVCCorePracticas.Controllers
         }
 
         [HttpPost]
-        public IActionResult MatematicasCollatz(int? numero)
+        public IActionResult MatematicasCollatz(int numero)
         {
-            if (numero != null)
+            List<int> model = new List<int>();
+            model.Add(numero);
+            while (numero != 1)
             {
-                string numeros = "Numeros: " + numero + ", ";
-                while (numero != 1)
-                {
-                    if (numero % 2 == 0)
-                    {
-                        numero /= 2;
-                        numeros += numero + ", ";
-                    }
-                    else
-                    {
-                        numero = (numero * 3) + 1;
-                        numeros += numero + ", ";
-                    }
-                }
-                ViewBag.Collatz = numeros.Trim(',');
+                if (numero % 2 == 0) numero /= 2;
+                else numero = (numero * 3) + 1;
+                model.Add(numero);
             }
+            
+            return View(model);
+        }
+        /*GET Y POST TABLA MULTIPLICAR*/
+        [HttpGet]
+        public IActionResult TablaMultiplicar()
+        {
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult TablaMultiplicar(int numero)
+        {
+            string modelOperacion;
+            int modelResultado;
+            List<Tabla> tabla = new List<Tabla>();
+            for (int i = 1; i <= 10; i++)
+            {
+                Models.Tabla fila = new Models.Tabla();
+                modelOperacion = numero + " * " + i;
+                modelResultado = numero * i;
+                fila.Operacion = modelOperacion;
+                fila.Resultado = modelResultado;
+                tabla.Add(fila);
+            }
+          
+            return View(tabla);
         }
 
     }

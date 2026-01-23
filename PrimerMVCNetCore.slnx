@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="MVCCoreEmpty/MVCCoreEmpty.csproj" Id="d6c229cc-fa16-42ab-95d7-8d0597275ab1" />
   <Project Path="MVCCorePracticas/MVCCorePracticas.csproj" Id="e6fb219d-b92c-44f2-a63d-a21ab1f2a988" />
   <Project Path="PrimerMVCNetCore/PrimerMVCNetCore.csproj" />
 </Solution>
