@@ -1,6 +1,24 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
-@{
+@section styles{
+    <style>
+        h2 {
+            background-color:chartreuse;
+            color: black;
+        }
+    </style>
 }
-<h1>Estas en la Home</h1>
+
+@section script {
+    <script>
+        $(document).ready(function(){
+            $("#botonhome").click(function(){
+                $("#mensajehome").text("Boton pulsado en Home")
+            })
+        })
+    </script>
+}
+<h1 style="color:cadetblue">Estas en la Home</h1>
+<h2 id="mensajehome">Mensaje en vista</h2>
+<button class="btn btn-danger" id="botonhome">Pulsar en Home</button>
